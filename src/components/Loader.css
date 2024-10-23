@@ -1,0 +1,142 @@
+/* Loader.css */
+
+  .pikachu {
+    position: relative;
+    top: 110%;
+    left: 100%;
+    width: 100px;
+    height: 100px;
+    animation: jump 1s infinite;
+  }
+  
+  .ear {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background: #f9d020;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .ear.left {
+    left: 10px;
+    transform: rotate(-20deg);
+  }
+  
+  .ear.right {
+    right: 10px;
+    transform: rotate(20deg);
+  }
+  
+  .face {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    width: 60px;
+    height: 40px;
+    background: #ffeb3b;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 0 4px #f9d020, 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for the eyes */
+.eye {
+    position: absolute;
+    width: 8px; /* Width of the eye */
+    height: 8px; /* Height of the eye */
+    background: #000; /* Black color for the eyes */
+    border-radius: 50%; /* Make them round */
+    top: 10px; /* Position from the top of the face */
+}
+
+.eye.left {
+    left: 15px; /* Position for the left eye */
+}
+
+.eye.right {
+    right: 15px; /* Position for the right eye */
+}
+
+/* Styles for the nose */
+.nose {
+    position: absolute;
+    top: 20px; /* Position from the top of the face */
+    left: 25px; /* Center it between the eyes */
+    width: 10px; /* Width of the nose */
+    height: 5px; /* Height of the nose */
+    background: #000; /* Black color for the nose */
+    border-radius: 5px; /* Rounded edges for the nose */
+}
+
+  
+.body {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 80px;
+    height: 60px;
+    background: #f9d020; /* Main color */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow */
+    background-image: linear-gradient(135deg, #f9d020 25%, #f8d72b 25%, #f8d72b 50%, #f9d020 50%, #f9d020 75%, #f8d72b 75%, #f8d72b); /* Add texture */
+    background-size: 20px 20px; /* Adjust size of texture */
+}
+  
+  .tail {
+    position: absolute;
+    bottom: 15px;
+    left: 80px;
+    width: 10px;
+    height: 40px;
+    background: #f9d020;
+    border-radius: 10px;
+    transform: rotate(45deg);
+  }
+  
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+  /* Container for the battery */
+.battery-container {
+    position: absolute;
+    bottom: 40%; /* Position it below Pikachu */
+    left: 53%; /* Centered horizontally */
+    transform: translateX(-50%);
+    width: 200px; /* Battery width */
+    height: 30px; /* Battery height */
+    border: 2px solid #000; /* Battery border */
+    border-radius: 5px; /* Rounded corners */
+    background: #fff; /* Background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+/* The actual charging bar */
+.battery {
+    width: 0%; /* Start charging from 0% */
+    height: 100%; /* Full height */
+    background-image: linear-gradient(135deg, #48f920 25%, #09e335 25%, #09e335 50%, #48f920 50%, #48f920 75%, #09e335 75%, #09e335);
+    border-radius: 3px; /* Slight rounding to the inner bar */
+    animation: charge 2s infinite alternate; /* Smooth transition effect */
+}
+
+
+
+/* Charging animation keyframes */
+@keyframes charge {
+    0% {
+        width: 0%; /* Charging starts at 0% */
+    }
+    100% {
+        width: 100%; /* Fills the entire battery */
+    }
+}
+
+
+  
